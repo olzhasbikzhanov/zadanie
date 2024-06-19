@@ -1,43 +1,32 @@
 package com.example.zadanie.service;
 
 import com.example.zadanie.model.Organization;
-import com.example.zadanie.repository.OrganizationRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 /**
- * Сервисный класс для управления данными организаций.
- * Обеспечивает доступ к данным через OrganizationRepository.
+ * Сервисный интерфейс для управления данными организаций.
+ * Предоставляет методы для получения списка всех организаций, выполнения поиска организаций по фильтру и получения
+ * организации по её уникальному идентификатору.
  */
-@Service
-@RequiredArgsConstructor
-public class OrganizationService {
-    private final OrganizationRepository organizationRepository;
+public interface OrganizationService {
 
     /**
      * Получает список всех организаций.
      */
-    public List<Organization> getAllOrganizations() {
-        return organizationRepository.findAll();
-    }
+    List<Organization> getAllOrganizations();
 
     /**
-     * Выполняет поиск организаций по части полного наименования.
-     * Игнорирует регистр символов при поиске.
-     * @param search Строка для поиска в полном наименовании организации
+     * Выполняет поиск организаций по фильтру.
+     * @param search Строка для поиска по фильтру
      */
-    public List<Organization> searchOrganizations(String search) {
-        return organizationRepository.findByFullNameContainingIgnoreCase(search);
-    }
+    List<Organization> searchOrganizations(String search);
 
     /**
      * Получает организацию по её идентификатору.
      * @param id Идентификатор организации
      */
-    public Optional<Organization> getOrganizationById(Long id) {
-        return organizationRepository.findById(id);
-    }
+    Optional<Organization> getOrganizationById(int id);
+
 }

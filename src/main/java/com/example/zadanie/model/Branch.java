@@ -30,11 +30,11 @@ import java.util.Date;
 public class Branch {
 
     /**
-     * Уникальный идентификатор филиала.
+     * Уникальный идентификатор филиала. Генерируется автоматически.
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     /**
      * Организация, к которой относится филиал.

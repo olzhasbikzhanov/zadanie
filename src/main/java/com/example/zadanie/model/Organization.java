@@ -29,11 +29,11 @@ import java.util.List;
 public class Organization {
 
     /**
-     * Уникальный идентификатор организации.
+     * Уникальный идентификатор организации. Генерируется автоматически.
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     /**
      * Полное название организации.
@@ -48,12 +48,12 @@ public class Organization {
     /**
      * Идентификационный номер налогоплательщика (ИНН).
      */
-    private String inn;
+    private Long inn;
 
     /**
      * Основной государственный регистрационный номер (ОГРН).
      */
-    private String ogrn;
+    private Long ogrn;
 
     /**
      * Почтовый адрес организации.

@@ -41,7 +41,7 @@ public class OrganizationController {
      * Объект Optional, содержащий информацию об организации, если она найдена.
      */
     @GetMapping("/{id}")
-    public Optional<Organization> getOrganizationById(@PathVariable Long id) {
+    public Optional<Organization> getOrganizationById(@PathVariable int id) {
         return organizationService.getOrganizationById(id);
     }
 

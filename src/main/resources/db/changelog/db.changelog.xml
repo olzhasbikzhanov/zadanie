@@ -5,5 +5,4 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
     <include file="/db/changelog/2024-06-18/001-create.xml"/>
-    <include file="/db/changelog/2024-06-18/002-insert.xml"/>
 </databaseChangeLog>
